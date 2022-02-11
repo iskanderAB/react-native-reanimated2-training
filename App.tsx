@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import SwipToDelete from './src/screens/swipToDelete/SwipToDelete'
+
+
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <SwipToDelete/>
   )
 }
 
