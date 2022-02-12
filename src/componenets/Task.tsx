@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
-import React from 'react';
+import React, { memo, useRef } from 'react';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { PanGestureHandler, PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import Animated, { Extrapolate, Extrapolation, interpolate, runOnJS, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated'
@@ -9,9 +9,10 @@ interface Props {
     onDeleteHandler: (index: number)=>void,
 }
 
-const {width, height} = Dimensions.get('window');
-const Task: React.FC<Props> = ({title, index, onDeleteHandler}) => {
 
+const {width, height} = Dimensions.get('window');
+const Task: React.FC<Props> = memo(({title, index, onDeleteHandler}) => {
+  const ref = useRef(0);
   const translationX = useSharedValue(0);
   const itemHeight = useSharedValue(100);
   
@@ -25,15 +26,19 @@ const Task: React.FC<Props> = ({title, index, onDeleteHandler}) => {
     },
     onEnd:(event)=>{
       console.log("end translation  => ",Math.abs(translationX.value), " width => ", width/2);
-      console.log("end velocity  => ",Math.abs(event.velocityX), " velocity  => 3000");
-      console.log("result => ",( Math.abs(translationX.value) >= width/4 && Math.abs(event.velocityX) > 3000 ) )
-      if (Math.abs(translationX.value) >= width/2 || ( Math.abs(translationX.value) >= width/4 && Math.abs(event.velocityX) > 3000 ) )
+      console.log("end velocity  => ",Math.abs(event.velocityX), " velocity  => 2000");
+      console.log("result => ",( Math.abs(translationX.value) >= width/4 && Math.abs(event.velocityX) > 2000 ) )
+      if (Math.abs(translationX.value) >= width/2 || ( Math.abs(translationX.value) >= width/4 && Math.abs(event.velocityX) > 2000 ) )
         translationX.value= withTiming(-width-10,undefined,(finished)=>{
             if(finished){
               console.log("deleted UI");
               itemHeight.value= withTiming(0,{
                 duration: 50
-              },()=>runOnJS(onDeleteHandler)(index));
+              },()=>{
+                runOnJS(onDeleteHandler)(index);
+                console.log( "this is was deleted => ", index);
+              }
+                );
              
             }
         });
@@ -48,7 +53,6 @@ const Task: React.FC<Props> = ({title, index, onDeleteHandler}) => {
       transform : [{translateX : translationX.value}]
     }
   })
-
   const containerStyle = useAnimatedStyle(()=>{
     return { 
       height : itemHeight.value 
@@ -64,6 +68,9 @@ const Task: React.FC<Props> = ({title, index, onDeleteHandler}) => {
         ),    
     }
   })
+  
+  console.log("tasks randred !" , ref.current++); 
+
   return (
     <Animated.View style={[styles.container,containerStyle]} >
       <Animated.View style={[styles.icon,iconStyle]}>
@@ -76,7 +83,7 @@ const Task: React.FC<Props> = ({title, index, onDeleteHandler}) => {
       </PanGestureHandler>
     </Animated.View>
   )
-}
+})
 
 export default Task
 
