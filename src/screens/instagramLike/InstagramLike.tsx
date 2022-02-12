@@ -1,7 +1,7 @@
 import { Dimensions, Image, StyleSheet, View, } from 'react-native'
 import React, { useCallback, useRef } from 'react'
 import { GestureHandlerRootView, TapGestureHandler } from 'react-native-gesture-handler';
-import Animated, { Extrapolate, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
+import Animated, { Extrapolate, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withDelay, withSpring, withTiming } from 'react-native-reanimated';
 
 const { width, height } = Dimensions.get("screen");
 
@@ -15,18 +15,18 @@ const InstagramLike = () => {
         scale: scale.value
       }],
       opacity: interpolate(scale.value, 
-        [0,1],
+        [0,1],  
         [.3,1],
         Extrapolate.CLAMP
         )
     }
   })
   const doubleClickHandler = useCallback(()=>{ 
-    scale.value = withTiming(1,{
-      duration: 500
+    scale.value = withSpring(1,{
+      damping: 7
     },(f)=>{
         if(f){
-          scale.value = withDelay(500,withTiming(0));
+          scale.value = withDelay(50,withTiming(0));
         }
     });
   },[])
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
   },
   heart: { 
     position: 'absolute',
-    width: "50%",
-    height: '30%',
+    width: "30%",
+    height: '20%',
     resizeMode: 'contain',
     shadowColor: '#202020',
     shadowOffset: {width: 0, height: 0},
