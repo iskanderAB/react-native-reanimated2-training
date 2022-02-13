@@ -6,13 +6,14 @@ import ScrollAnimation from './src/screens/scrollAnimation/ScrollAnimation'
 import GasterHundler from './src/screens/gsestureHandler/GestureHandler'
 import ThemAnimation from './src/screens/themAnimation/ThemAnimation'
 import InstagramLike from './src/screens/instagramLike/InstagramLike'
+import CounterAnimation from './src/screens/counterAnimation/CounterAnimation'
 
 
 
 
 const App = () => {
   return (
-      <RippleEffect/>
+      <CounterAnimation/>
   )
 }
 
