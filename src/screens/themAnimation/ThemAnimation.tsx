@@ -21,7 +21,7 @@ const Colors = {
     text: '#1E1E1E',
   },
 };
-const App = () => {
+const ThemAnimation = () => {
   const [them, setThem] = useState<Them>('light');
 
   const progress = useDerivedValue(()=>{
@@ -51,7 +51,7 @@ const App = () => {
   )
 }
 
-export default App
+export default ThemAnimation
 
 const styles = StyleSheet.create({
   container: {

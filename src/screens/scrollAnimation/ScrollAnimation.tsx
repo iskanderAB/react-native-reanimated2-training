@@ -8,7 +8,7 @@ import Page from '../../componenets/Page';
 
 
 const pages = ["Iskander","dali","dhia","khawla","farah"];
-const App = () => {
+const ScrollAnimation = () => {
   const scrollX = useSharedValue(0);
 
   const scrollHandler = useAnimatedScrollHandler((event)=>{ 
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default ScrollAnimation;

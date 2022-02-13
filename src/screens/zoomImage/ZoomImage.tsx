@@ -6,7 +6,7 @@ import Animated, { event, useAnimatedGestureHandler, useAnimatedStyle, useShared
 const img = 'https://images.unsplash.com/photo-1621569642780-4864752e847e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80';
 const {width , height} = Dimensions.get("window");
 
-const App = () => {
+const ZoomImage = () => {
 
   const scale = useSharedValue(1);
   const focalX = useSharedValue(0);
@@ -58,7 +58,7 @@ const App = () => {
   )
 }
 
-export default App
+export default ZoomImage
 
 const styles = StyleSheet.create({
   focalPoint: {
