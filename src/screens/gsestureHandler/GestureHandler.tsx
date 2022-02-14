@@ -22,7 +22,7 @@ type Context = {
   translateX : number;
   translateY : number;
 }
-export default function GasterHundlerAnimation() {
+export default function GestureHandlerAnimation() {
   
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
