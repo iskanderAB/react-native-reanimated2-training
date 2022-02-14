@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
       },
     ripple: {
-        width: 500,
-        height: 500,
+        width: 200,
+        height: 100,
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',

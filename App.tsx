@@ -7,13 +7,16 @@ import GasterHundler from './src/screens/gsestureHandler/GestureHandler'
 import ThemAnimation from './src/screens/themAnimation/ThemAnimation'
 import InstagramLike from './src/screens/instagramLike/InstagramLike'
 import CounterAnimation from './src/screens/counterAnimation/CounterAnimation'
+import SwipToDelete from './src/screens/swipToDelete/SwipToDelete'
+import SwitchCounter from './src/componenets/switchCounter'
+import PanGestureHandlerScroll from './src/screens/PanGestureHandlerScroll/PanGestureHandlerScroll'
 
 
 
 
 const App = () => {
   return (
-      <CounterAnimation/>
+      <PanGestureHandlerScroll/>
   )
 }
 
