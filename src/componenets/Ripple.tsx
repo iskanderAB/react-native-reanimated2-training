@@ -27,7 +27,7 @@ const Ripple:FC<RippleProps> = ({style, onTap, children}) => {
         positionY.value = event.y; 
 
         scale.value = 0;
-        scale.value = withTiming(1,{duration: 1000});
+        scale.value = withTiming(1,{duration: 400});
       },
       onActive: (event)=>{
           console.log("clicked ! " , event);
