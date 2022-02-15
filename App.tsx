@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import RippleEffect from './src/screens/rippelEffect/RippleEffect'
 import ZoomImage from './src/screens/zoomImage/ZoomImage'
@@ -10,13 +10,11 @@ import CounterAnimation from './src/screens/counterAnimation/CounterAnimation'
 import SwipToDelete from './src/screens/swipToDelete/SwipToDelete'
 import SwitchCounter from './src/componenets/switchCounter'
 import PanGestureHandlerScroll from './src/screens/PanGestureHandlerScroll/PanGestureHandlerScroll'
-
-
-
+import ClockLoader from './src/screens/clockLoader/ClockLoader'
 
 const App = () => {
   return (
-      <PanGestureHandlerScroll/>
+      <ClockLoader/>
   )
 }
 
