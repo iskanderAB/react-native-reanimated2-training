@@ -63,9 +63,10 @@ export default ZoomImage
 const styles = StyleSheet.create({
   focalPoint: {
     ...StyleSheet.absoluteFillObject,
-    width: 20,
-    height: 20,
-    backgroundColor: 'blue',
+    width: 10,
+    height: 10,
+    backgroundColor: 'red',
+    opacity: .3,
     borderRadius: 10,
   },
 })
