@@ -12,12 +12,13 @@ import SwitchCounter from './src/componenets/switchCounter'
 import PanGestureHandlerScroll from './src/screens/PanGestureHandlerScroll/PanGestureHandlerScroll'
 import ClockLoader from './src/screens/clockLoader/ClockLoader'
 import ColorPickerScreen from './src/screens/clorPickerScreen/ColorPickerScreen'
+import MessengerBallFollow from './src/screens/messengerBallFollow/MessengerBallFollow'
 
 
 
 const App = () => {
   return (
-      <ColorPickerScreen/>
+      <MessengerBallFollow/>
   )
 }
 
