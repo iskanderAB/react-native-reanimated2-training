@@ -87,7 +87,7 @@ export default MessengerBallFollow;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor : '#00000054'
+    backgroundColor : 'white'
   },
   circle: {
     width: 70,
@@ -95,5 +95,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     borderRadius: 35,
     position: 'absolute',
+    elevation: 6
   },
 });

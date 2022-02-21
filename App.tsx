@@ -13,12 +13,13 @@ import PanGestureHandlerScroll from './src/screens/PanGestureHandlerScroll/PanGe
 import ClockLoader from './src/screens/clockLoader/ClockLoader'
 import ColorPickerScreen from './src/screens/clorPickerScreen/ColorPickerScreen'
 import MessengerBallFollow from './src/screens/messengerBallFollow/MessengerBallFollow'
+import BottomSheet from './src/screens/bottomSheet/BottomSheet'
 
 
 
 const App = () => {
   return (
-      <MessengerBallFollow/>
+      <BottomSheet/>
   )
 }
 
